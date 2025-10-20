@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Forstå Phishing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            /* Uendelig lang gradient baggrund "#b3e0ff" */
+            background: linear-gradient(to bottom, #eaf6ff 0%, #b3e0ff 10%, #4fa3d1 40%, #0a3557 100%);
+            background-repeat: repeat-y;
+                
+        }
+        header {
+            background: transparent;
+            color: #fff;
+            padding: 2rem 1rem 1rem 1rem;
+            text-align: center;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: rgba(255,255,255,0.1); /* Mere gennemsigtig */
+            border-radius: 18px;
+            box-shadow: none; /* Fjern skygge */
+            border: none; /* Fjern kant */
+            padding: 2rem;
+        }
+        .phishing-layout {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            min-height: 500px;
+            position: relative;
+        }
+        .ice-hole {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100px;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            pointer-events: none;
+        }
+        .phishing-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 48px;
+        }
+        .phishing-col.left {
+            align-items: flex-end;
+        }
+        .phishing-col.right {
+            align-items: flex-start;
+        }
+        .phishing-block {
+            max-width: 340px;
+        }
+        .phishing-link {
+            background: #eaf1fb;
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 2px solid #2d6cdf;
+            color: #2d6cdf;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 2px 8px #2d6cdf22;
+            margin-bottom: 0.5em;
+            display: inline-block;
+        }
+        .phishing-text {
+            font-size: 1em;
+            margin-top: 8px;
+        }
+        .phishing-line {
+            width: 80px;
+            min-width: 80px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+        .phishing-line svg {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            height: 100%;
+        }
+        .example {
+            background: #eaf1fb;
+            border-left: 4px solid #2d6cdf;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        ul {
+            padding-left: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <div class="phishing-layout">
+            <div class="ice-hole">
+               <svg width="100vw" height="100" viewBox="0 0 1920 100" preserveAspectRatio="none" style="width:100vw; height:100px; display:block;">
+                    <ellipse cx="960" cy="50" rx="900" ry="40" fill="#eaf6ff" stroke="#b3e0ff" stroke-width="12" />
+                    <ellipse cx="960" cy="50" rx="600" ry="25" fill="#b3e0ff" opacity="0.5" />
+                </svg>
+            </div>
+            <div class="phishing-col left">
+                <div class="phishing-block">
+                    <a class="phishing-link" href="#hvad">Hvad er Phishing?</a>
+                    <div class="phishing-text">Phishing er en type cyberangreb, hvor kriminelle forsøger at narre dig til at give følsomme oplysninger som adgangskoder, 
+                    kreditkortnumre eller personlige data. De udgiver sig ofte for at være troværdige organisationer eller personer. De kan komme i mange former, 
+                    der er både dem hvor du selv overgiver dine dataer, men der er også dem som kan komme i form af ransomware, men det er en længere diskusion.</div>
+                </div>
+                <div class="phishing-block">
+                    <a class="phishing-link" href="#hvordan">Hvordan virker det?</a>
+                    <div class="phishing-text">Phishing-angreb starter typisk med en e-mail, besked eller hjemmeside, der ser legitim ud. Angriberen forsøger at få dig til at klikke på et link, 
+                    downloade en fil eller indtaste dine oplysninger på en falsk hjemmeside.</div>
+                </div>
+            </div>
+            <div class="phishing-line">
+                <svg width="80" height="540" viewBox="0 0 80 540">
+                    <!-- Fiskesnoren starter i is-hullet -->
+                    <line x1="40" y1="0" x2="40" y2="480" stroke="#2d6cdf" stroke-width="5" />
+                    <!-- Stor og tydelig fiskekrog -->
+                    <path d="M40,480 Q70,510 40,520 Q10,510 40,480" stroke="#2d6cdf" stroke-width="7" fill="#fff" />
+                    <circle cx="40" cy="520" r="13" fill="#fff" stroke="#2d6cdf" stroke-width="5" />
+                    <path d="M40,520 Q50,535 40,545 Q30,535 40,520" stroke="#2d6cdf" stroke-width="7" fill="#2d6cdf" />
+                    <circle cx="40" cy="545" r="7" fill="#2d6cdf" />
+                </svg>
+            </div>
+            <div class="phishing-col right">
+                <div class="phishing-block">
+                    <a class="phishing-link" href="#eksempler">De typiske former for phishing</a>
+                    <div class="phishing-text">
+                        <div class="example">
+                            <strong>E-mail-svindel:</strong> Du modtager en e-mail, der ligner den er fra din bank, og beder dig om at bekræfte din konto via et link.
+                        </div>
+                        <div class="example">
+                            <strong>Falsk login-side:</strong> En hjemmeside efterligner en populær tjeneste (som Gmail eller Facebook) og beder dig logge ind, så dine oplysninger stjæles.
+                        </div>
+                        <div class="example">
+                            <strong>SMS-phishing (smishing):</strong> Du får en sms om, at du har vundet en præmie,eller hente en pakke, og skal klikke på et mistænkeligt link.
+                        </div>
+                        <div class="example">
+                            <strong> Telefon-phishing:</strong> Du får en opringning fra et nummer som får dig til at trykke på nogle msitænklige links.
+                        </div>
+
+                    </div>
+                </div>
+                <div class="phishing-block">
+                    <a class="phishing-link" href="#beskyt">Sådan beskytter du dig</a>
+                    <ul class="phishing-text">
+                        <li>Tjek afsenderens e-mailadresse og se efter stavefejl.</li>
+                        <li>Klik ALDRIG på mistænkelige links eller download uventede vedhæftninger.</li>
+                        <li>Verificér hjemmesider før du indtaster dine oplysninger.</li>
+                        <li>Brug stærke, unikke adgangskoder og eventuelt aktiver to-faktor-godkendelse.</li>
+                        <li>Hold din software og antivirus opdateret.</li>
+                        <li>Er du i tvivl, så kontakt organisationen direkte via officielle kontaktoplysninger.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="side-fishing-line" style="position:fixed; left:50%; top:0; transform:translateX(-50%); z-index:20;">
+        <svg width="60" height="1100" viewBox="0 0 60 1100">
+            <!-- Længere fiskesnor i midten af skærmen -->
+            <line x1="30" y1="0" x2="30" y2="750" stroke="#303030" stroke-width="5" />
+            <!-- Realistisk fiskekrog med tydelig bue og spids -->
+            <path d="M30,750 Q55,850 30,900 Q10,870 30,750" stroke="#303030" stroke-width="7" fill="none" />
+            <!-- Krogens krumme spids, mere markant -->
+            <path d="M30,900 Q45,930 20,940 Q35,920 30,900" stroke="#303030" stroke-width="7" fill="none" />
+            <!-- Krog-øje -->
+            <circle cx="30" cy="750" r="7" fill="#fff" stroke="#303030" stroke-width="3" />
+        </svg>
+        <!--(farve på krog orgialt) "#2d6cdf"-->
+    </div>
+        </div>
+    </main>
+    <footer style="width:100%; text-align:center; margin-top:40px; margin-bottom:20px;">
+        <a href="https://taenk.dk/" target="_blank" style="display:inline-block;">
+            <img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/46914a440000640005001a62/0x0.png" alt="Forbrugerrådet Tænk logo" style="height:60px; width:auto; opacity:0,85;" />
+        </a>
+    </footer>
+    
+</body>
+</html>
+
